@@ -13,4 +13,6 @@ body {
   background-color: rgb(31, 31, 45);
   border-radius: 1.5rem;
   padding: 1.5rem;
+  min-width: 300px;
+  max-width: 400px;
 }

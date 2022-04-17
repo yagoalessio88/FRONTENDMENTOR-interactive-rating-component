@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import Image from "../images/illustration-thank-you.svg";
+import { useRatingContext } from "../context/RatingContext.js";
 function Result() {
+  const { puntuation } = useRatingContext();
   return (
     <Wrapper>
       <article className="main-section">
@@ -8,7 +10,7 @@ function Result() {
           <img src={Image} alt="ilustration" />
           <div className="title-container">
             <h6>
-              You selected <span>4</span> out of <span>5</span>
+              You selected <span>{puntuation}</span> out of <span>5</span>
             </h6>
           </div>
         </div>

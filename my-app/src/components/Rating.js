@@ -1,7 +1,20 @@
 import Logo from "../images/icon-star.svg";
 import styled from "styled-components";
-
+import { useRatingContext } from "../context/RatingContext.js";
 function Rating() {
+  const { setIsSubmitted, setPuntuation } = useRatingContext();
+
+  const handlePuntuation = (e) => {
+    const botones = [...e.currentTarget.querySelectorAll("div")];
+    botones.map((boton) => {
+      return boton.classList.remove("selected");
+    });
+    if (!e.target.classList.contains("puntuation-container")) {
+      e.target.classList.add("selected");
+    }
+    const id = e.target.dataset.id;
+    setPuntuation(id);
+  };
   return (
     <Wrapper>
       <article className="main-section">
@@ -15,24 +28,16 @@ function Rating() {
             feedback is appreciated to help us improve our offering!
           </p>
         </div>
-        <div className="puntuation-container">
-          <div className="puntuation-1">
-            <span>1</span>
-          </div>
-          <div className="puntuation-2">
-            <span>2</span>
-          </div>
-          <div className="puntuation-3">
-            <span>3</span>
-          </div>
-          <div className="puntuation-4">
-            <span>4</span>
-          </div>
-          <div className="puntuation-5">
-            <span>5</span>
-          </div>
+        <div className="puntuation-container" onClick={handlePuntuation}>
+          <div data-id={1}>1</div>
+          <div data-id={2}>2</div>
+          <div data-id={3}>3</div>
+          <div data-id={4}>4</div>
+          <div data-id={5}>5</div>
         </div>
-        <button type="submit">SUBMIT</button>
+        <button type="button" onClick={() => setIsSubmitted(true)}>
+          SUBMIT
+        </button>
       </article>
     </Wrapper>
   );
@@ -41,6 +46,10 @@ function Rating() {
 export { Rating };
 
 const Wrapper = styled.section`
+  :root {
+    --dark-grey: rgb(46, 46, 67);
+    --light-grey: rgb(105, 105, 117);
+  }
   .logo-container {
     background-color: rgb(46, 46, 67);
     height: 2rem;
@@ -71,22 +80,30 @@ const Wrapper = styled.section`
     display: flex;
     justify-content: space-around;
   }
+
   .puntuation-container div {
+    color: rgb(105, 105, 117);
     padding: 0.5rem;
     background-color: rgb(46, 46, 67);
     height: 2.5rem;
     width: 2.5rem;
     border-radius: 50%;
     position: relative;
+    text-align: center;
   }
-  .puntuation-container span {
-    font-weight: 600;
-    color: rgb(105, 105, 117);
-    position: absolute;
-    left: 50%;
-    top: 45%;
-    transform: translate(-45%, -45%);
+  .puntuation-container div:hover {
+    background-color: rgb(230, 121, 32);
+    color: white;
+    cursor: pointer;
   }
+  .selected {
+    background-color: rgb(105, 105, 117) !important;
+    color: white !important;
+  }
+  .selected:hover {
+    background-color: rgb(230, 121, 32) !important;
+  }
+
   button {
     border-style: none;
     width: 100%;
@@ -95,5 +112,8 @@ const Wrapper = styled.section`
     color: rgb(232, 135, 55);
     font-weight: 600;
     letter-spacing: 0.1rem;
+  }
+  button:hover {
+    cursor: pointer;
   }
 `;

@@ -17,28 +17,30 @@ function Rating() {
   };
   return (
     <Wrapper>
-      <article className="main-section">
-        <div className="logo-container">
-          <img src={Logo} alt="icon star" />
-        </div>
-        <div>
-          <h4>How did we do?</h4>
-          <p>
-            Please let us know how we did with your support request. All
-            feedback is appreciated to help us improve our offering!
-          </p>
-        </div>
-        <div className="puntuation-container" onClick={handlePuntuation}>
-          <div data-id={1}>1</div>
-          <div data-id={2}>2</div>
-          <div data-id={3}>3</div>
-          <div data-id={4}>4</div>
-          <div data-id={5}>5</div>
-        </div>
-        <button type="button" onClick={() => setIsSubmitted(true)}>
-          SUBMIT
-        </button>
-      </article>
+      <section>
+        <article className="main-section">
+          <div className="logo-container">
+            <img src={Logo} alt="icon star" />
+          </div>
+          <div>
+            <h4>How did we do?</h4>
+            <p>
+              Please let us know how we did with your support request. All
+              feedback is appreciated to help us improve our offering!
+            </p>
+          </div>
+          <div className="puntuation-container" onClick={handlePuntuation}>
+            <div data-id={1}>1</div>
+            <div data-id={2}>2</div>
+            <div data-id={3}>3</div>
+            <div data-id={4}>4</div>
+            <div data-id={5}>5</div>
+          </div>
+          <button type="button" onClick={() => setIsSubmitted(true)}>
+            SUBMIT
+          </button>
+        </article>
+      </section>
     </Wrapper>
   );
 }

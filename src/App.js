@@ -6,9 +6,7 @@ import { useRatingContext } from "./context/RatingContext.js";
 function App() {
   const { isSubmitted } = useRatingContext();
 
-  return (
-    <section className="App">{!isSubmitted ? <Rating /> : <Result />}</section>
-  );
+  return <main>{!isSubmitted ? <Rating /> : <Result />}</main>;
 }
 
 export default App;

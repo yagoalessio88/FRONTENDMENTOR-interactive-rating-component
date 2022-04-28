@@ -5,23 +5,25 @@ function Result() {
   const { puntuation } = useRatingContext();
   return (
     <Wrapper>
-      <article className="main-section">
-        <div className="image-container">
-          <img src={Image} alt="ilustration" />
-          <div className="title-container">
-            <h6>
-              You selected <span>{puntuation}</span> out of <span>5</span>
-            </h6>
+      <section>
+        <article className="main-section">
+          <div className="image-container">
+            <img src={Image} alt="ilustration" />
+            <div className="title-container">
+              <h6>
+                You selected <span>{puntuation}</span> out of <span>5</span>
+              </h6>
+            </div>
           </div>
-        </div>
-        <div className="text-container">
-          <h4>Thank you!</h4>
-          <p>
-            We appreciate you taking the time to give a rating. If you ever need
-            more support, don't hesitate to get in touch!
-          </p>
-        </div>
-      </article>
+          <div className="text-container">
+            <h4>Thank you!</h4>
+            <p>
+              We appreciate you taking the time to give a rating. If you ever
+              need more support, don't hesitate to get in touch!
+            </p>
+          </div>
+        </article>
+      </section>
     </Wrapper>
   );
 }

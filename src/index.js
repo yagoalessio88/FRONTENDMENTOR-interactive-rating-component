@@ -9,8 +9,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
 	<RatingProvider>
 		<App />
-	</RatingProvider>,
-	document.getElementById("root")
+	</RatingProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

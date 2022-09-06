@@ -5,7 +5,8 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { RatingProvider } from "./context/RatingContext.js";
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
 	<RatingProvider>
 		<App />
 	</RatingProvider>,

@@ -12,10 +12,10 @@ main{
   padding: 1rem;
 }
 .main-section {
-  margin: 7% auto 0 auto;
+  margin: 24vh auto 0 auto;
   background: radial-gradient(98.96% 98.96% at 50% 0%, #232A34 0%, #181E27 100%);
   border-radius: 1.875rem;
   padding: 1.75rem;
-  width: 25.75rem;
+  width: 25.7rem;
   height: 26rem;
 }
